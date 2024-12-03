@@ -13,6 +13,6 @@ public class MyController {
 
     @GetMapping("/showMyLoginPage")
     public String showLoginPage() {
-        return "login-page";
+        return "fancy-login";
     }
 }
