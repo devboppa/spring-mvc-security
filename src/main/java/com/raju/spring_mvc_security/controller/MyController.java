@@ -15,4 +15,18 @@ public class MyController {
     public String showLoginPage() {
         return "fancy-login";
     }
+
+    @GetMapping("/leadership")
+    public String showLeadership() {
+        return "leadership";
+    }
+
+    @GetMapping("/systems")
+    public String showSystems() {
+        return "systems";
+    }
+    @GetMapping("/accessDenied")
+    public String showAccessDenied() {
+        return "accessDenied";
+    }
 }

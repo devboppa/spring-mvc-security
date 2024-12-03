@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,14 @@
   </head>
   <body>
   <h1>HomePage</h1>
+  <hr>
+  User: <span sec:authentication="principal.username" ></span>
+  Roles: <span sec:authentication="principal.authorities" ></span>
+  <hr>
+  <a sec:authorize="hasRole('MANAGER')" th:href="@{/leadership}">Leadership summit <hr></a>
+
+  <a sec:authorize="hasRole('ADMIN')" th:href="@{/systems}">Systems <hr></a>
+
   <form th:action="@{/logout}" method="post">
     <input type="submit" value="Logout" />
   </form>
